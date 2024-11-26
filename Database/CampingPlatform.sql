@@ -74,3 +74,26 @@ CREATE TABLE OwnerCampingSpots (
     FOREIGN KEY (owner_id) REFERENCES Users(user_id),
     FOREIGN KEY (spot_id) REFERENCES CampingSpots(spot_id)
 );
+
+-- Voeg ontbrekende kolommen toe
+ALTER TABLE Users
+ADD COLUMN phone VARCHAR(15) AFTER email,
+ADD COLUMN country VARCHAR(50) AFTER phone;
+
+-- Verander de naam van 'full_name' naar 'name' als dit je doel is
+ALTER TABLE Users
+CHANGE COLUMN full_name name VARCHAR(100);
+
+-- Zorg dat `birth_date` correct is ingesteld (als deze kolom nog niet bestaat)
+ALTER TABLE Users
+MODIFY COLUMN birth_date DATE;
+
+-- Voeg een default-waarde toe voor `country` als dat gewenst is
+ALTER TABLE Users
+MODIFY COLUMN country VARCHAR(50) DEFAULT 'Unknown';
+
+-- Zorg ervoor dat de kolommen email en username uniek blijven
+ALTER TABLE Users
+ADD UNIQUE KEY (email),
+ADD UNIQUE KEY (username);
+

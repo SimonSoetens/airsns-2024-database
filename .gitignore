@@ -1,0 +1,45 @@
+# Algemene systeem- en tijdelijke bestanden
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
+*.log
+*.tmp
+*.lock
+*.swp
+*.swo
+
+# Specifieke Windows-mappen
+Application Data/
+Cookies/
+Local Settings/
+Mijn documenten/
+NetHood/
+Netwerkprinteromgeving/
+Recent/
+SendTo/
+Sjablonen/
+AppData/
+Saved Games/
+Searches/
+
+# OneDrive bestanden
+OneDrive/
+
+# Anaconda, iCloud, VirtualBox en andere mappen
+.anaconda/
+.docker/
+.iCloudDrive/
+.VirtualBox/
+
+# Project-specifieke mappen
+camping-platform-frontend/node_modules/
+CampingPlatformAPI/node_modules/
+
+# Ongebruikte bestanden
+*.xlsx
+*.docx
+*.pptx
+*.url
+*.regtrans-ms
+*.ini
